@@ -1,3 +1,3 @@
-packafe store;
+package store;
 
 public class Product2{}
