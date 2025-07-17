@@ -132,6 +132,24 @@ import org.springframework.web.bind.annotation.RequestParam;
     	     return "search_delate"; // 登録完了画面を表示
     	 }
     	
+    	 
+    	 
+    	 @GetMapping("/admin_add")
+  	    public String admin_add() {
+  	        return "admin_add"; // Thymeleafは templates/AtAdd.html を探します
+  	    }
+    	 @GetMapping("/admin_approval")
+  	    public String admin_approval() {
+  	        return "admin_approval"; // Thymeleafは templates/AtAdd.html を探します
+  	    }
+    	 @GetMapping("/admin_delate")
+    	  public String admin_delate() {
+    	      return "admin_delate"; // Thymeleafは templates/admin_delate.html を探します
+    	  }
+    	 @GetMapping("/admin_edit")
+  	    public String admin_edit() {
+  	        return "admin_edit"; // Thymeleafは templates/AtAdd.html を探します
+  	    }
     }
     	
 
