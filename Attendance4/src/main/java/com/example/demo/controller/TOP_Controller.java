@@ -117,10 +117,9 @@ import org.springframework.web.bind.annotation.RequestParam;
     	 @PostMapping("/search_complate")
     	 public String search_complate(
     	     @RequestParam String search_id,
-    	     
+    	     @RequestParam String search_date,
+    	     @RequestParam String search_range,
     	     Model model) {
-    	     // 受け取ったデータを処理する
-    	     // 例: model.addAttribute("date", dateInput);
     	     return "search_complate"; // 登録完了画面を表示
     	 }
     	
@@ -132,6 +131,7 @@ import org.springframework.web.bind.annotation.RequestParam;
     	 public String search_delate( Model model) {
     	     return "search_delate"; // 登録完了画面を表示
     	 }
+    	
     }
     	
 

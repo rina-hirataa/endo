@@ -11,19 +11,19 @@
 	<div class="container">
 	    <h2>ユーザー検索</h2>
 	    <form th:action="@{/search_complate}" method="POST">
-	        <label for="search_id">ユーザーID</label>
+	       
 	        <input type="text" id="search_id" name="search_id" placeholder="ID" required>
+			<input type="date" id="search_date" name="search_date" placeholder="date" required>
+			<labe>
+				   <select name="search_range" required>
+				     <option value="1週間">1週間</option>
+				     <option value="1か月">1か月</option>
+				   </select>
+				   </label><br>
 	        <input type="submit" value="検索">
 	    </form>
 
-	    <div class="button-container">
-	        <form th:action="@{/search_edit}" method="POST">
-	            <input type="submit" value="編集">
-	        </form>
-	        <form th:action="@{/search_delate}" method="POST">
-	            <input type="submit" value="削除">
-	        </form>
-	    </div>
+	    
 	</div>
 	  <a href="/AtMenu">勤怠メニュー</a>
 </body>
