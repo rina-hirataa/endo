@@ -8,15 +8,23 @@
 <body>
 	<h1>ユーザー検索画面</h1>
 	
-	<form th:action="@{/search_complate}" method="POST">
-		       <label>
-		           ユーザーID<br>
-		           <input type="text" name="search_id" placeholder="ID">
-		 
-		       <input type="submit" value="検索">
-		   </form>
+	<div class="container">
+	    <h2>ユーザー検索</h2>
+	    <form th:action="@{/search_complate}" method="POST">
+	        <label for="search_id">ユーザーID</label>
+	        <input type="text" id="search_id" name="search_id" placeholder="ID" required>
+	        <input type="submit" value="検索">
+	    </form>
 
-	  
+	    <div class="button-container">
+	        <form th:action="@{/search_edit}" method="POST">
+	            <input type="submit" value="編集">
+	        </form>
+	        <form th:action="@{/search_delate}" method="POST">
+	            <input type="submit" value="削除">
+	        </form>
+	    </div>
+	</div>
 	  <a href="/AtMenu">勤怠メニュー</a>
 </body>
 </html>
