@@ -18,9 +18,9 @@ import org.springframework.web.bind.annotation.RequestParam;
     	
     	// ColorRepositoryはcolorテーブルにアクセスするためのリポジトリ
     	/*--- 最初のリクエスト -------------------------*/
-    	@GetMapping("/TOP")
+    	@GetMapping("/top")
     	 public String TOP() {
-            return "TOP"; // input.htmlを返す
+            return "top"; // input.htmlを返す
         }
     	 @GetMapping("/AtAdd")
     	    public String AtAdd() {
