@@ -7,10 +7,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 
 @SpringBootApplication
-public class AttendanceApplication {
+public class Attendance4Application {
 
 	public static void main(String[] args) {
-		SpringApplication.run(AttendanceApplication.class, args);
+		SpringApplication.run(Attendance4Application.class, args);
 	}
 
 }
