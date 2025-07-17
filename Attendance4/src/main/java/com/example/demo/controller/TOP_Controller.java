@@ -77,7 +77,41 @@ import org.springframework.web.bind.annotation.RequestParam;
     	     return "Register_complate"; // 登録完了画面を表示
     	 }
     	
+    	 @GetMapping("/pw")
+    	 public String pw() {
+            return "pw"; // input.htmlを返す
+        }
+    	 @PostMapping("/Register_pw")
+    	 public String Register_pw(
+    	     @RequestParam String oldpw,
+    	     @RequestParam String newpw,
+    	     @RequestParam String new1pw,
+    	    
+    	     Model model) {
+    	     // 受け取ったデータを処理する
+    	     // 例: model.addAttribute("date", dateInput);
+    	     return "Pw_complate"; // 登録完了画面を表示
+    	 }
     	 
+    	 
+    	
+    	 
+    	 @PostMapping("/edit_complate")
+    	 public String edit_complate(
+    	     @RequestParam String edit_id,
+    	     @RequestParam String edit_date,
+    	     @RequestParam String edit_startTime,
+    	     @RequestParam String edit_endTime,
+    	     @RequestParam String edit_workTime,
+    	     @RequestParam String edit_breakTime,
+    	     @RequestParam String edit_attendanceType,
+    	     
+    	    
+    	     Model model) {
+    	     // 受け取ったデータを処理する
+    	     // 例: model.addAttribute("date", dateInput);
+    	     return "Edit_complate"; // 登録完了画面を表示
+    	 }
     }
     	
 
