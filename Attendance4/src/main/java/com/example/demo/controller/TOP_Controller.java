@@ -112,6 +112,19 @@ import org.springframework.web.bind.annotation.RequestParam;
     	     // 例: model.addAttribute("date", dateInput);
     	     return "Edit_complate"; // 登録完了画面を表示
     	 }
+    	 
+    	 
+    	 @PostMapping("/search_complate")
+    	 public String search_complate(
+    	     @RequestParam String search_id,
+    	     
+    	     Model model) {
+    	     // 受け取ったデータを処理する
+    	     // 例: model.addAttribute("date", dateInput);
+    	     return "search_complate"; // 登録完了画面を表示
+    	 }
+    	 
+    	 
     }
     	
 
