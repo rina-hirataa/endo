@@ -2,11 +2,29 @@
 
 body {
             font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
+            background-color: #747060;
 			text-align: center;
             margin: 0;
+			padding: 0;
             padding: 20px;
+	
         }
+
+/* 左の黒い円とロゴ */
+.circle{
+  position: absolute;
+  top: 30%;
+  left: -10%;
+  transform: translateY(-50%);
+  width: 120vh;
+  height: 120vh;
+  background-color: #3a3831;
+  border-radius: 50%;/*角を丸く*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
 
         h1 {
             color: #333;
@@ -80,13 +98,30 @@ body {
 		/* リンクのスタイル */
 		a {
 		    display: inline-block;
-		    margin-top: 20px;
+		    margin-top: 10px;
 		    padding: 10px 15px;
 		    background-color: #F4EBDA(255, 128, 64);
 		    color:#A6B5A5;
 		    text-decoration: none;
 		    border-radius: 5px;
+
 		}
+		.login-button{
+		  position: absolute;
+		  top: 50%;
+		  right: 10%;
+		  transform: translateY(-50%);
+		  padding: 5px 150px;
+		  font-size: 20px;
+		  background-color: white;
+		  border: 2px solid #000;
+		  border-radius: 8px;
+		  font-weight: bold;
+		  cursor: pointer;
+		}
+		.login-button:hover{
+			background-color: #262724;
+	    }
 
 		a:hover {
 		    background-color: #262724;
