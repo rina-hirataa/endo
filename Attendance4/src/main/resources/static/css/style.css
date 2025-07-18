@@ -2,10 +2,12 @@
 
 body {
             font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
+            background-color: #fdf6d7;
 			text-align: center;
             margin: 0;
+			padding: 0;
             padding: 20px;
+			
         }
 
         h1 {
