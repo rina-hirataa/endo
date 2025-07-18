@@ -7,24 +7,22 @@
 <head>
 <meta charset="UTF-8">
 <title>トップ</title>
-<link rel="stylesheet" th:href="@{/css/style.css}">
+<link rel="stylesheet" th:href="@{/css/style_top.css}">
 
 <!--　th:がつくのはTymeleaf用　-->
 <!-- @{パス名}　-->
 </head>
 <body>
-
-	<h1>Company M</h1>
 	
-	<div class="container">
+	<div class="circle">
+		<span class="company-text">company</span>
+		<h1 class="logo">M</h1>
+	</div>
+	
+	
+	<div class="login-button">
 		<a href="/L">ログイン</a>
-		
-		<div class="circle">
-			<span class="company-text">company</span>
-			<h1 class="logo">M</h1>
-		</div>
-	
-		<a href="/AtAdd">新規登録</a>
+	</div>	
 		
 		
 	
