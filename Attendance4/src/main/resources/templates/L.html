@@ -1,34 +1,215 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-	
+<html lang="ja">
 <head>
-	<meta charset="UTF-8">
-	<title>ログイン</title>
-	<link rel="stylesheet" th:href="@{/css/style.css}">
+  <meta charset="UTF-8">
+  <title>ログイン</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+	
+	a {
+	       text-decoration: none;
+	   }
+
+    * {
+      box-sizing: border-box;
+      font-family: "メイリオ", sans-serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #fdf6d7;
+    }
+
+    .container {
+      display: flex;
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .left {
+      width: 50%;
+      position: relative;
+      z-index: 1;
+    }
+
+    .circle-bg {
+      position: absolute;
+      width: 130vmin;
+      height: 130vmin;
+      background-color: #87816c;
+      border-radius: 50%;
+      bottom: -15vmin;
+      left: -15vmin;
+      z-index: 0;
+    }
+
+	 .menu-buttons {
+	  position: relative;
+	  z-index: 1;
+	  display: flex;
+	  flex-direction: column;
+	  align-items: flex-start; /* 子要素を左端に揃える */
+	  margin-top: 20px;
+	}
+
+	    .menu-button { 
+	  transform: translateY(-20px); /* Y軸方向に上に移動ボタンを上にそろえる */
+	  width: 220px;
+	  height: 100px;
+	  background-color: #C3BB8D;
+	  color: white;
+	  font-size: 22px;
+	  font-weight: bold;
+	  line-height: 100px;
+	  text-align: center;
+	  border: 2px solid black;
+	  border-radius: 0 100px 100px 0;
+	  margin-bottom: -2px;
+	  margin-left: 0; /* 左端に配置するためのマージン */
+	}
+
+
+    .logo-area {
+      position: absolute;
+      top: 50%;
+      left: 38%;
+      transform: translate(-30%, -30%);
+      color: white;
+      text-align: center;
+      z-index: 2;
+    }
+
+    .logo-area .company {
+      font-family: "Montserrat", sans-serif;
+      letter-spacing: 5px;
+      font-size: 18px;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .logo-area .m {
+      font-family: "Monoton", sans-serif;
+      font-size: 120px;
+      font-weight: 300;
+      line-height: 1;
+    }
+
+    .right {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 40px;
+      width: 50%;
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: bold;
+      margin-bottom: 20px;
+    }
+
+    form {
+      width: 100%;
+      max-width: 400px;
+    }
+
+    .error-message {
+      color: red;
+      font-weight: bold;
+      font-size: 16px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .form-group label {
+      font-size: 20px;
+      font-weight: bold;
+      width: 120px;
+    }
+
+    .form-group input {
+      flex: 1;
+      padding: 12px;
+      font-size: 18px;
+      border: 3px solid black;
+      border-radius: 5px;
+      max-width: 100%;
+    }
+
+    button {
+      width: 100%;
+      max-width: 300px;
+      padding: 15px 50px;
+      font-size: 22px;
+      font-weight: bold;
+      background-color: white;
+      border: 3px solid black;
+      border-radius: 12px;
+      cursor: pointer;
+      display: block;
+      margin: 40px auto 0 auto;
+	  
+	  
+    }
+  </style>
 </head>
 <body>
-	<h1>ログイン画面</h1>
-	 
-	
-		<h2>ログイン情報を入力してください</h2>
-		
+  <div class="container">
+    <div class="left">
+      <div class="circle-bg"></div>
+	  <div class="menu-buttons">
+	         <a href="/top"><div class="menu-button">トップページ</div></a>
+      </div>
+      <div class="logo-area">
+        <span class="company">company</span>
+        <span class="m">M</span>
+      </div>
+    </div>
+    <div class="right">
+      <h1>ログイン</h1>
+      <div id="error" class="error-message" style="display: none;">
+        ユーザーIDまたはパスワードが間違っています。
+      </div>
+      <form onsubmit="return handleLogin(event)">
+        <div class="form-group">
+          <label for="userid">ユーザーID</label>
+          <input type="text" id="userid" name="userid">
+        </div>
+        <div class="form-group">
+          <label for="password">パスワード</label>
+          <input type="password" id="password" name="password">
+        </div>
+        <button type="submit">ログイン</button>
+      </form>
+    </div>
+  </div>
 
-		<form th:action="@{/System}" method="POST">
-		        <label>
-		            社員番号<br>
-		            <input type="text" name="employeeId" placeholder="社員番号を入力">    
-		        </label><br>
-		        <label>
-		            パスワード<br>
-		            <input type="text" name="password" placeholder="パスワードを入力">    
-		        </label><br>
-		        <input type="submit" value="ログイン">
-		    </form>
+  <script>
+    function handleLogin(event) {
+      event.preventDefault();
+      const userId = document.getElementById('userid').value;
+      const password = document.getElementById('password').value;
 
-	
-
-
-		<a href="/top">戻る</a>
-	
+      if (userId !== 'admin' || password !== '1234') {
+        document.getElementById('error').style.display = 'block';
+      } else {
+        document.getElementById('error').style.display = 'none';
+        alert('ログイン成功');
+        window.location.href = "/System"; // 成功時にページ遷移
+      }
+    }
+  </script>
 </body>
 </html>
