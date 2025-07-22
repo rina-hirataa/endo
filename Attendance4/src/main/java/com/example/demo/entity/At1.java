@@ -6,13 +6,13 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "Department") // テーブル名を指定
+@Table(name = "Employees") // テーブル名を指定
 public class At1 {
     @Id
-    @Column(name = "DEP_ID") 
+    @Column(name = "EMP_ID") 
     private String employeeId; // カラム名が employee_id である場合、@Column(name = "employee_id") を追加
 
-    @Column(name = "dep_name") 
+    @Column(name = "pass_hash") 
     private String password;
 
     // ゲッターとセッター
