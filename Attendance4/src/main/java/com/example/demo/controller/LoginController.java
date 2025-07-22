@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.example.demo.entity.At1;
 import com.example.demo.repository.UserRepository;
+import com.example.demo.service.Password_Hasher;
 
 @Controller
 public class LoginController {
@@ -17,8 +18,9 @@ public class LoginController {
 
     @PostMapping("/System")
     public String login(@RequestParam String employeeId, @RequestParam String password, Model model) {
+    	 String hashedPassword = Password_Hasher.hashPassword(password);
         // データベースで社員番号とパスワードを照合
-        At1 user = userRepository.findByEmployeeIdAndPassword(employeeId, password);
+        At1 user = userRepository.findByEmployeeIdAndPassword(employeeId, hashedPassword);
 
         if (user != null) {
             // 一致した場合、システムメニュー画面に遷移
