@@ -1,5 +1,7 @@
 package com.example.demo.controller;
 
+import jakarta.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,12 +19,13 @@ public class LoginController {
     private UserRepository userRepository; // ユーザー情報を取得するためのリポジトリ
 
     @PostMapping("/System")
-    public String login(@RequestParam String employeeId, @RequestParam String password, Model model) {
+    public String login(@RequestParam String employeeId, @RequestParam String password, Model model,HttpSession session) {
     	 String hashedPassword = Password_Hasher.hashPassword(password);
         // データベースで社員番号とパスワードを照合
         At1 user = userRepository.findByEmployeeIdAndPassword(employeeId, hashedPassword);
 
         if (user != null) {
+        	session.setAttribute("employeeId", employeeId);
             // 一致した場合、システムメニュー画面に遷移
             return "System"; // Thymeleafは templates/System.html を探します
         } else {
