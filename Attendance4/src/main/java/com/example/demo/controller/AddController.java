@@ -18,13 +18,13 @@ public class AddController {
     private NuserRepository nuserRepository;
 
     // アカウント登録フォームを表示するメソッド
-    @GetMapping("/register")
+    @GetMapping("/Register")
     public String showRegistrationForm(Model model) {
         return "registration"; // registration.html の Thymeleaf テンプレートを返す
     }
 
     // アカウント登録処理
-    @PostMapping("/register")
+    @PostMapping("/Register")
     public String registerUser(@RequestParam String employeeId, @RequestParam String name,
                                @RequestParam String email, @RequestParam String password,
                                @RequestParam int departmentId, @RequestParam int role,
