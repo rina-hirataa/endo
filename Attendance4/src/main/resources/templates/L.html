@@ -182,10 +182,10 @@
       <div id="error" class="error-message" style="display: none;">
         ユーザーIDまたはパスワードが間違っています。
       </div>
-      <form onsubmit="return handleLogin(event)">
+	  <form th:action="@{/System}" method="POST">
         <div class="form-group">
-          <label for="userid">ユーザーID</label>
-          <input type="text" id="userid" name="userid">
+          <label for="employeeId">ユーザーID</label>
+          <input type="text" name="employeeId" placeholder="社員ID">
         </div>
         <div class="form-group">
           <label for="password">パスワード</label>
@@ -196,20 +196,5 @@
     </div>
   </div>
 
-  <script>
-    function handleLogin(event) {
-      event.preventDefault();
-      const userId = document.getElementById('userid').value;
-      const password = document.getElementById('password').value;
-
-      if (userId !== 'admin' || password !== '1234') {
-        document.getElementById('error').style.display = 'block';
-      } else {
-        document.getElementById('error').style.display = 'none';
-        alert('ログイン成功');
-        window.location.href = "/System"; // 成功時にページ遷移
-      }
-    }
-  </script>
 </body>
 </html>
