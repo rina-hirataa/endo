@@ -18,11 +18,10 @@
 			</div>
 	 </div>
 	
-	
-	
 	<div class="title-regist">
 	  <h1>勤怠登録画面</h1>
-	 </div>		
+	 </div>
+	
      <form th:action="@{/Register_complate}" method="POST" 
 		   		th:object="${AttendancetForm}">
 				<label>ID<br>
@@ -79,7 +78,7 @@
 									    </label><br>
 				    <input type="submit" value="登録">
 				</form>
-
+				
 				<a href="/AtMenu">勤怠メニュー</a>
 				</body>
 				</html>
