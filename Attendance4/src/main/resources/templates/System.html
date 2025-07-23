@@ -5,6 +5,12 @@
   <title>システムメニュー</title>
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+	
+
+	
+	a {
+		       text-decoration: none; /*リンクに下線を引かせないようにする*/
+		   }
 
     html, body {
       margin: 0;
@@ -133,8 +139,8 @@
     <div class="sidebar">
       <div class="circle"></div>
       <div class="menu-buttons">
-        <div class="menu-button">トップページ</div>
-        <div class="menu-button">ログアウト</div>
+         <a href="/top"><div class="menu-button">トップページ</div></a>
+       <a href="/top"><div class="menu-button">ログアウト</div></a>
       </div>
       <div class="logo-area">
         <span class="company">company</span>
@@ -143,10 +149,10 @@
     </div>
     <div class="main">
       <h1>システムメニュー画面</h1>
-      <div class="button-group">
-        <button class="main-button">勤怠メニュー</button>
-        <button class="main-button">パスワード再設定</button>
-        <button class="main-button">管理者権限</button>
+      <adiv class="button-group">
+   <a href="/AtMenu"><button class="main-button">勤怠メニュー</button></a>
+   <a href ="/pw"><button class="main-button">パスワード再設定</button></a>
+   <a href ="/Admin"><button class="main-button">管理者権限</button></a>
       </div>
     </div>
   </div>
