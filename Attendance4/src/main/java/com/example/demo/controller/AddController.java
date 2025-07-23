@@ -18,25 +18,26 @@ public class AddController {
     private NuserRepository nuserRepository;
 
     // アカウント登録フォームを表示するメソッド
-    @GetMapping("/register")
+    @GetMapping("/Register")
     public String showRegistrationForm(Model model) {
         return "registration"; // registration.html の Thymeleaf テンプレートを返す
     }
 
     // アカウント登録処理
-    @PostMapping("/register")
-    public String registerUser(@RequestParam String employeeId, @RequestParam String name,
+    @PostMapping("/Register")
+    public String registerUser(@RequestParam String employeeId, @RequestParam String username,
                                @RequestParam String email, @RequestParam String password,
-                               @RequestParam int departmentId, @RequestParam int role,
+                               @RequestParam String department, @RequestParam int role,
                                Model model) {
         
         // パスワードをハッシュ化（SHA-256など）する処理
         String hashedPassword = Password_Hasher.hashPassword(password);
+        int departmentId = Integer.parseInt(department);
 
         // ユーザーオブジェクトを作成
         User newUser = new User();
         newUser.setEmployeeId(employeeId);
-        newUser.setName(name);
+        newUser.setName(username);
         newUser.setEmail(email);
         newUser.setPassword(hashedPassword);
         newUser.setDepartmentId(departmentId);
@@ -48,7 +49,7 @@ public class AddController {
         // 登録完了メッセージなどを表示
         model.addAttribute("successMessage", "アカウントが登録されました。");
 
-        return "registration"; // 再度登録画面を表示（必要に応じてリダイレクトも可）
+        return "Admin"; // 再度登録画面を表示（必要に応じてリダイレクトも可）
     }
 }
 
