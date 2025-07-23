@@ -58,7 +58,7 @@ import org.springframework.web.bind.annotation.RequestParam;
    	    public String Attendance_search() {
    	        return "Attendance_search"; // Thymeleafは templates/AtAdd.html を探します
    	    }
-    	 @GetMapping("/Admin")
+    	@GetMapping("/Admin")
    	    public String Admin() {
    	        return "Admin"; // Thymeleafは templates/AtAdd.html を探します
    	    }

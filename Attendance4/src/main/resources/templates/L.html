@@ -7,11 +7,41 @@
 	<link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
+
 	<h1>ログイン画面</h1>
 	 
 	
 		<h2>ログイン情報を入力してください</h2>
-		
+
+  <div class="container">
+    <div class="left">
+      <div class="circle-bg"></div>
+	  <div class="menu-buttons">
+	         <a href="/top"><div class="menu-button">トップページ</div></a>
+      </div>
+      <div class="logo-area">
+        <span class="company">company</span>
+        <span class="m">M</span>
+      </div>
+    </div>
+    <div class="right">
+      <h1>ログイン</h1>
+      <div id="error" class="error-message" style="display: none;">
+        ユーザーIDまたはパスワードが間違っています。
+      </div>
+	  <form th:action="@{/System}" method="POST">
+        <div class="form-group">
+          <label for="employeeId">ユーザーID</label>
+          <input type="text" name="employeeId" placeholder="社員ID">
+        </div>
+        <div class="form-group">
+          <label for="password">パスワード</label>
+          <input type="password" id="password" name="password">
+        </div>
+        <button type="submit">ログイン</button>
+      </form>
+    </div>
+  </div>
 
 		<form th:action="@{/System}" method="POST">
 		        <label>
