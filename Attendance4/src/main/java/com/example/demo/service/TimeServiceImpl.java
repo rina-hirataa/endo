@@ -17,12 +17,18 @@ public class TimeServiceImpl implements TimeService{
 	@Override
 	public Duration timediff(LocalTime time1, LocalTime time2, LocalTime time3) {
 		LocalTime defo =LocalTime.of(7, 0);
+		LocalTime base =LocalTime.of(0, 0);
 	    Duration fdiff = Duration.between(time1, time2);
 	    Duration sdiff = Duration.between(time3, defo);
-	    
 	    Duration tdiff = fdiff.minus(sdiff);
 	    
-	    return tdiff;
+	    LocalTime overtime =base.plus(tdiff);
+	    
+	    if (overtime.isBefore(defo)){
+	    	return tdiff;
+	    }
+	    return Duration.ZERO;
+	    
 	}
 
 	@Override
