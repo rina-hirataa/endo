@@ -25,18 +25,19 @@ public class AddController {
 
     // アカウント登録処理
     @PostMapping("/Register")
-    public String registerUser(@RequestParam String employeeId, @RequestParam String name,
+    public String registerUser(@RequestParam String employeeId, @RequestParam String username,
                                @RequestParam String email, @RequestParam String password,
-                               @RequestParam int departmentId, @RequestParam int role,
+                               @RequestParam String department, @RequestParam int role,
                                Model model) {
         
         // パスワードをハッシュ化（SHA-256など）する処理
         String hashedPassword = Password_Hasher.hashPassword(password);
+        int departmentId = Integer.parseInt(department);
 
         // ユーザーオブジェクトを作成
         User newUser = new User();
         newUser.setEmployeeId(employeeId);
-        newUser.setName(name);
+        newUser.setName(username);
         newUser.setEmail(email);
         newUser.setPassword(hashedPassword);
         newUser.setDepartmentId(departmentId);
