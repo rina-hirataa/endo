@@ -49,7 +49,7 @@ public class AddController {
         // 登録完了メッセージなどを表示
         model.addAttribute("successMessage", "アカウントが登録されました。");
 
-        return "registration"; // 再度登録画面を表示（必要に応じてリダイレクトも可）
+        return "Admin"; // 再度登録画面を表示（必要に応じてリダイレクトも可）
     }
 }
 

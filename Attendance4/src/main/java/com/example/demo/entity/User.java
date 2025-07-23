@@ -1,32 +1,32 @@
 package com.example.demo.entity;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "Employees")
 public class User {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY) // 自動生成戦略を指定
-    private Long id; // エンティティの一意識別子
-
+    @Column(name = "EMP_ID")
     private String employeeId;
+    
+    @Column(name = "name")
     private String name;
+    
+    @Column(name = "email")
     private String email;
+    
+    @Column(name = "pass_hash")
     private String password; // ハッシュ化したパスワード
+    
+    @Column(name = "DEP_ID")
     private int departmentId; // 部門ID
+    
+    @Column(name = "role")
     private int role; // 役割 (0: 管理者, 1: 一般ユーザー)
-
-    // ゲッターとセッター
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getEmployeeId() {
         return employeeId;
