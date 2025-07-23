@@ -50,10 +50,10 @@ import org.springframework.web.bind.annotation.RequestParam;
   	    public String Attendance_edit() {
   	        return "Attendance_edit"; // Thymeleafは templates/AtAdd.html を探します
   	    }
-    	 @GetMapping("/Attendance_register")
-   	    public String Attendance_register() {
-   	        return "Attendance_register"; // Thymeleafは templates/AtAdd.html を探します
-   	    }
+    	// @GetMapping("/Attendance_register")
+   	    //public String Attendance_register() {
+   	    //    return "Attendance_register"; // Thymeleafは templates/AtAdd.html を探します
+   	    //}
     	 @GetMapping("/Attendance_search")
    	    public String Attendance_search() {
    	        return "Attendance_search"; // Thymeleafは templates/AtAdd.html を探します
@@ -63,19 +63,19 @@ import org.springframework.web.bind.annotation.RequestParam;
    	        return "Admin"; // Thymeleafは templates/AtAdd.html を探します
    	    }
     	 
-    	 @PostMapping("/Register_complate")
-    	 public String registerAttendance(
-    	     @RequestParam String dateInput,
-    	     @RequestParam String startTime,
-    	     @RequestParam String endTime,
-    	     @RequestParam String breakTime,
-    	     @RequestParam String workTime,
-    	     @RequestParam String attendanceType,
-    	     Model model) {
+    	 //@PostMapping("/Register_complate")
+    	// public String registerAttendance(
+    	//     @RequestParam String dateInput,
+    	//     @RequestParam String startTime,
+    	//     @RequestParam String endTime,
+    	//     @RequestParam String breakTime,
+    	//     @RequestParam String workTime,
+    	//     @RequestParam String attendanceType,
+    	//     Model model) {
     	     // 受け取ったデータを処理する
     	     // 例: model.addAttribute("date", dateInput);
-    	     return "Register_complate"; // 登録完了画面を表示
-    	 }
+    	//     return "Register_complate"; // 登録完了画面を表示
+    	// }
     	
     	 @GetMapping("/pw")
     	 public String pw() {
